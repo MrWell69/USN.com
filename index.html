@@ -14,7 +14,7 @@
 </div><hr>
 <div class="bk"><a id="sait"></a></div>
 <hr>
-<a href="https://t.me/USN_pro">@ Официальный TG канал USN <br>(Пишите по всем вопросам и идеям туда) :₽</a>
+<a href="https://t.me/InsideJobUSN">Ubase<br>(Писать по вопросам, идеям, регистрации сквадов и тд)</a>
 </body></html>
 <style>
 body{
@@ -34,6 +34,7 @@ align-items:center;
 justify-content:center;
 margin:0;
 vertical-align:top;
+font-size:200%;
 }.bk{
 background-color:#42009d;
 color:#c997ff;
@@ -42,25 +43,44 @@ width:100%;
 a{
 font-size:220%;
 }
-a:link{color:#e64b1a;}
-a:visited{color:#e64b1a;}
-a:active{color:#e64b1a;}
+a:link{color:#f17752;}
+a:visited{color:#f17752;}
+a:active{color:#f17752;}
 </style>
 <script>
+var SqName=[];
+var Sqssilka=[];
+var Sqpodp=[];
+var Sqcol=[];
+var col=0;
+
+function NewSq(N,S,P,C)
+{SqName[col]=N;Sqssilka[col]=S;Sqpodp[col]=P;Sqcol[col]=C;col++;}
 
 function inhom(){var st='';
+
+st+="Добро пожаловать на сайт USN, здесь находятся ссыки на все официальные сквады USN, а так же другая информация, сайт в процессе разработки и будет меняться со временем, самая нужная для вас вкладка сейчас это вкладка 'Сквады'.<br><br>";
 
 st+='Вы находитесь в Домашней Вкладке.<br><br>Создатель сайта Mr Well.<br><br>Добро пожаловать на сайт ЮСН (или United squads Network).<br>Мы- объединение с творческими целями.<br>Здесь вы узнаете о всех новостях и постах ЮСН,<br>а также историю нашего союза - Стародубчик.<br><br>Северная посхолко.';
 
 document.getElementById("sait").innerHTML=st;}
 function inrul(){var st='';
 
-st+='Банить Бёрна и БМП.';
+st+='Банить Бёрна и БМП, Не мешать другим общаться в чате, не быть неадекватом.';
 
 document.getElementById("sait").innerHTML=st;}
 function insqd(){var st='';
 
-st+='<a href="https://t.me/USN_pro">Главный сквад USN<br></a><br><a href="https://t.me/WellovUSN">Сквад Wellovs</a>';
+st+="<h2>Сквады (сортировка по подписчикам)</h2>"
+
+st+="Всего Сквадов: "+col;
+
+for(var i=0;i<col;i++){
+st+="<div style='background-color:"+Sqcol[i]+"'>"+(i+1)+") <a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a> ( "+Sqpodp[i]+" )</div><br>";
+}
+
+st+="Данные на момент 6 Июля, ссылки не работают если Сквад закрыт от посищения посторонних.";
+
 
 document.getElementById("sait").innerHTML=st;}
 function incst(){var st='';
@@ -73,8 +93,31 @@ var st='';
 
 st+='New flag USN<br>Оранжевые полоски:<br>Симвализируют Власть Mr Wella, 1 основателя USN.<br>Фиолетовые полоски:<br>Симвализируют Власть Эндера, 2 основателя USN.<br>Белые полоски:<br>Симвализируют свободу.<br>Тёмно-фиолетовый квадрат со значком вай фая:<br>Симвализирует то что USN в первую очередь цифровое объединение, объединяющее интернет.<br>USN is:<br>United (Соеденённые)<br>Squads of (Сквады)<br>Networks (Интернета)<br><a href="https://t.me/USN_pro/2012">Увидеть флаг</a><br><br>';
 st+='Слава USN!';
-st+='<br>(Версия 0.1)';
+st+='<br>(Версия 02)';
 
 document.getElementById("sait").innerHTML=st;}
 inhom();
+</script>
+<script>
+NewSq("US.Net","USN_pro",335,"#a02600");
+NewSq("Сквад Wellov's","WellovUSN",113,"#363636");
+NewSq("Сквад Сотрудничества","+w2DX8NbZhe9kYWIy",89,"#9ca300");
+NewSq("Ubase","InsideJobUSN",75,"#0baa00");
+NewSq("Юсдума","+z_AzIQkGQJYxMzI6",51,"#cf5000");
+NewSq("АльцWella","AlcWella",47,"#252525");
+NewSq("ChAU","ChatRpChAU",38,"#700492");
+NewSq("Зонторланд","+QB7pBxtpTNw4YzFi",33,"#5cbd00");
+NewSq("НПЮСН","+3bTsv0PmfUYzZjBi",25,"#00ccda");
+NewSq("Gavan Squad","kanalgavan",21,"#306200");
+NewSq("Yousquad","+RYL1JaUqvYBlNGEy",20,"#3c2b00");
+NewSq("Soviet Squad","+_IWY-BM0I_YzODky",20,"#ff2121");
+NewSq("ОККУПАЦИЯ РПЮСН","+JXIjTLU1eINhODdi",17,"#bd0000");
+NewSq("NazBol Squad USN","+RSd4lPy1JBE2MjQy",15,"#141414");
+NewSq("USN Mapping Squad","+ITWnxzLUYXQ1NDky",14,"#181615");
+NewSq("Сквад gазеtы","+B1ZAbbPEcLVjOTYy",14,"#d0d0d0");
+NewSq("Гусьстоцка","+3fJK2A1aA01mNzZi",12,"#680000");
+NewSq("Orange House","Orange_Hause",10,"#9e6306");
+NewSq("Верховный Совет USN","",6,"#300e56");
+NewSq("USN prime","",4,"#f4ff04");
+NewSq("ГК А-ХПЮ | MС A-HSU","AHSU_usn",2,"#1d1996");
 </script>
