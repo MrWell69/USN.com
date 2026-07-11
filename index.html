@@ -14,7 +14,7 @@
 </div><hr>
 <div class="bk"><a id="sait"></a></div>
 <hr>
-<a href="https://t.me/InsideJobUSN">Ubase<br>(Писать по вопросам, идеям, регистрации сквадов и тд)</a>
+<a href="https://t.me/InsideJobUSN">Ubase</a><br><br><a>(Писать по вопросам, идеям, регистрации как Юсновец, сквадов и тд)<br><br>Последнее обнавление: 11 Июля.</a>
 </body></html>
 <style>
 body{
@@ -34,14 +34,14 @@ align-items:center;
 justify-content:center;
 margin:0;
 vertical-align:top;
-font-size:190%;
+font-size:180%;
 }.bk{
 background-color:#42009d;
 color:#c997ff;
 width:100%;
 }
 a{
-font-size:200%;
+font-size:180%;
 }
 a:link{color:#f17752;}
 a:visited{color:#f17752;}
@@ -76,23 +76,24 @@ st+="<h2>Партии (сортировка по Рандому)</h2>"
 st+="Всего Партий: "+Pri;
 
 for(var i=0;i<Pri;i++){
-st+="<div style='background-color:"+Prcol[i]+"'>"+(i+1)+") <a href='https://t.me/c/2370153945/"+Prssilka[i]+"'>"+PrName[i]+"</a> ( "+Prusn[i]+" )</div><br>";
+st+="<div style='background-color:"+Prcol[i]+"'>"+(i+1)+") <a href='https://t.me/c/2370153945/"+Prssilka[i]+"'>"+PrName[i]+"</a><br>Владелец партии: "+UsName[(Prusn[i]-1)]+"</div><br>";
 }
 
-st+="Данные на момент 7 Июля.";
+st+="<div style='background-color:#712e00'>Вы можете зарегестрировать вашу партию в Юсдуме</div><div style='background-color:#2d2d2d'><a href='https://t.me/+z_AzIQkGQJYxMzI6'>Юсдума</a><br>58 Подписчиков.</div><div style='background-color:#712e00'>так же основать коалицию партий</div><br>";
+
 
 document.getElementById("sait").innerHTML=st;}
 function inusn(){var st='';
 
 st+="<h2>Юсновцы (сортировка по ID)</h2>"
 
-st+="Всего Юсновцев: "+Usi+"<br>";
-
-st+="Данные на момент 7 Июля.";
+st+="Всего Юсновцев: "+Usi+"<br><br>";
 
 for(var i=0;i<Usi;i++){
 st+="ID - ["+(i+1)+"] <a href='https://t.me/"+Usssilka[i]+"'>"+UsName[i]+"</a><br>";
 }
+
+st+="<br><div style='background-color:#043a00'>Вы можете зарегестрироваться как Юсновец в Ubase</div><div style='background-color:#2d2d2d'><a href='https://t.me/InsideJobUSN'>Ubase</a><br>91 Подписчиков.</div><div style='background-color:#043a00'>•</div><br>";
 
 document.getElementById("sait").innerHTML=st;}
 function insqd(){var st='';
@@ -100,9 +101,102 @@ function insqd(){var st='';
 st+="<h2>Сквады (сортировка по подписчикам)</h2>"
 
 st+="Всего Сквадов: "+Sqi;
+var skok=0;for(var i=0;i<Sqi;i++)skok+=Sqpodp[i];
+st+="<br><br>Всего Подписчиков: От "+Sqpodp[0]+" до "+skok+" Подписчиков.<br><br>";
 
 for(var i=0;i<Sqi;i++){
-st+="<div style='background-color:"+Sqcol[i]+"'>"+(i+1)+") <a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a> ( "+Sqpodp[i]+" )</div><br>";
+st+="<div style='background-color:"+Sqcol[i]+"'>•</div><div style='background-color:#2d2d2d'>"+(i+1)+") <a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a><br>"+Sqpodp[i]+" Подписчиков.</div><div style='background-color:"+Sqcol[i]+"'>•</div><br>";
+}
+
+
+st+="<div style='background-color:#043a00'>Вы можете зарегестрировать ваш канал как сквад в Ubase</div><div style='background-color:#2d2d2d'><a href='https://t.me/InsideJobUSN'>Ubase</a><br>91 Подписчиков.</div><div style='background-color:#043a00'>•</div><br>";
+
+document.getElementById("sait").innerHTML=st;}
+function incst(){var st='';
+
+st+='<a href="https://t.me/InsideJobUSN/40944/50801">Как стать Юсновцем, создать сквад или партию (нажми)</a>';
+
+document.getElementById("sait").innerHTML=st;}
+function innas(){
+var st='';
+
+st+='New flag USN<br>Оранжевые полоски:<br>Симвализируют Власть Mr Wella, 1 основателя USN.<br>Фиолетовые полоски:<br>Симвализируют Власть Эндера, 2 основателя USN.<br>Белые полоски:<br>Симвализируют свободу.<br>Тёмно-фиолетовый квадрат со значком вай фая:<br>Симвализирует то что USN в первую очередь цифровое объединение, объединяющее интернет.<br>USN is:<br>United (Соеденённые)<br>Squads of (Сквады)<br>Networks (Интернета)<br><a href="https://t.me/USN_pro/2012">Увидеть флаг</a><br><br>';
+st+='Слава USN!';
+st+='<br>(Версия 0.4)';
+
+document.getElementById("sait").innerHTML=st;}
+</script>
+<script>
+NewSq("US.Net","USN_pro",345,"#a02600");
+NewSq("𝙱𝚕𝚞𝚎 𝙻𝚎𝚊𝚐𝚞𝚎 • 𝙰𝚗𝚊𝚛𝚌𝚑𝚘 𝙲𝚘𝚖𝚙𝚊𝚗𝚢","mapping_official",336,"#6f6bf2");
+NewSq("Сквад Wellov's","WellovUSN",117,"#363636");
+NewSq("Ubase","InsideJobUSN",91,"#043a00");
+NewSq("Сквад Сотрудничества","+w2DX8NbZhe9kYWIy",90,"#9ca300");
+NewSq("Зонтопия","zontoppp",89,"#297500");
+NewSq("Юсдума","+z_AzIQkGQJYxMzI6",58,"#cf5000");
+NewSq("АльцWella","AlcWella",49,"#252525");
+NewSq("ChAU","ChatRpChAU",39,"#700492");
+NewSq("Зонторланд","+QB7pBxtpTNw4YzFi",34,"#5cbd00");
+NewSq("НПЮСН","+3bTsv0PmfUYzZjBi",26,"#00ccda");
+NewSq("Gavan Squad","kanalgavan",21,"#306200");
+NewSq("Yousquad","+RYL1JaUqvYBlNGEy",21,"#3c2b00");
+NewSq("Soviet Squad","+_IWY-BM0I_YzODky",21,"#ff2121");
+NewSq("ОККУПАЦИЯ РПЮСН","+JXIjTLU1eINhODdi",17,"#bd0000");
+NewSq("NazBol Squad USN","+RSd4lPy1JBE2MjQy",16,"#141414");
+NewSq("Сквад gазеtы","+B1ZAbbPEcLVjOTYy",16,"#d0d0d0");
+NewSq("USN Mapping Squad","+ITWnxzLUYXQ1NDky",15,"#181615");
+NewSq("Гусьстоцка","+3fJK2A1aA01mNzZi",12,"#680000");
+NewSq("Orange House","Orange_Hause",10,"#9e6306");
+NewSq("Сан-Поландьеро","+WRxzC6Wr_ZU3YjEy",7,"#ff8d8d");
+NewSq("Верховный Совет USN","",6,"#300e56");
+NewSq("Центроград","Centrograd1",4,"#098d9b");
+NewSq("USN prime","",4,"#f4ff04");
+
+NewPr("Ненародная партия","48091",3,"#171717");
+NewPr("НПЮСН","47995",19,"#171717");
+NewPr("ТехноЮСН","47932",5,"#171717");
+NewPr("ТП ЮСН","47941",10,"#171717");
+NewPr("СКП USN","48046",7,"#171717");
+NewPr("Фин Блок","48675",14,"#171717");
+NewPr("ЛППЮСН","47989",11,"#171717");
+NewPr("(Н) ЛДПИ)","48411",2,"#171717");
+NewPr("СЛП ЮСН","47369",20,"#171717");
+NewPr("НБАРПШЮСН","47914",16,"#171717");
+NewPr("Вольнблок","48112",18,"#171717");
+NewPr("РП ЮСН","49250",6,"#171717");
+
+NewUs("Mr Well","Overlord_of_USN");
+NewUs("чел","justiii7");
+NewUs("Daiwakasu (Даивакаши)","Daiwakasu_chan");
+NewUs("AnimEnder (Эндер)","Ender_789101");
+NewUs("Сырный","Rawenta");
+NewUs("🇵🇱 Poland 🇵🇱","Polskacool");
+NewUs("Артём Ересько","Shaynehgddg");
+NewUs("чумной доктор","Glebinz");
+NewUs("Грасси","realgrassy");
+NewUs("Стародубчик","Starodubchik");
+NewUs("[TGBO] Недосидевший многократно недокандидат в недокуда","DivanPizdaKrovat");
+NewUs(".","GlebinzLOX");
+NewUs("канонир","Gunner201");
+NewUs("Фин","Finland_638");
+NewUs("Nik Balls","Nik_Balls");
+NewUs("Александр Сергеевич Чистяков","Sankasoil");
+NewUs("Артфул","NoneCountry_Official");
+NewUs("вольнич","Wolnich_37");
+NewUs("Шандргаллатрин","davidchelik");
+NewUs("Пи🚪","GSSFRchik");
+NewUs("император гусей","gsee565688");
+NewUs("Северный Главком","N0rthernartist");
+NewUs("Фюрер","Ordadada");
+NewUs("Квототство","HeartlessToday");
+NewUs("главный фембой USN","Nikolay_2_Romanovich");
+NewUs("Саша Zавод","Sashkeee_e");
+NewUs("министр","Ministerstvo_bespredeela");
+NewUs("Глеб52","USSRleave");
+NewUs("Карл Двенадцатый шведский","Sir10o");
+NewUs("Петроградский","vitaly_2048");
+
+insqd();</script>st+="<div style='background-color:"+Sqcol[i]+"'>"+(i+1)+") <a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a> ( "+Sqpodp[i]+" )</div><br>";
 }
 
 st+="Данные на момент 7 Июля, ссылки не работают если Сквад закрыт от посищения посторонних.";
