@@ -7,14 +7,14 @@
 <div>
 <div class="nb"onclick='insqd();'>Сквады</div>
 <div class="nb"onclick='inprt();'>Партии</div>
-<div class="nb"onclick='incst();'>Система</div>
+<div class="nb"onclick='inglv();'>Главная</div>
 <div class="nb"onclick='inrul();'>Законы</div>
 <div class="nb"onclick='innas();'>О нас</div>
 <div class="nbc"onclick='inusn();'></div>
 </div><hr></div><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
 <div class="bk"><a id="sait"></a></div>
 
-<a href="https://t.me/InsideJobUSN">Ubase</a><br><br><a>(Писать по вопросам, идеям, регистрации как Юсновец, сквадов и тд)<br><br>Последнее обнавление: 18 Июля. без обновления сквадов.</a>
+<a href="https://t.me/InsideJobUSN">Ubase</a><br><br><a>(Писать по вопросам, идеям, регистрации как Юсновец, сквадов и тд)<br><br>Последнее обнавление: 30 Июля.</a>
 </body></html>
 <style>
 .pan{
@@ -71,18 +71,29 @@ text-size-adjust:none;
 color:#ff7b19;
 font-size:150%;
 }
-.nb{
-background-color:#1a1a1a;
-color:#d3af04;
-width:19.4%;
-height:40px;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-margin:0;
-vertical-align:top;
-font-size:180%;
-}.bk{
+.nb {
+  background-color: #1a1a1a;
+  color: #d3af04;
+  width: 19.4%;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  vertical-align: top;
+  font-size: 180%;
+  cursor: pointer; /* Делает курсор «ручкой» при наведении */
+  
+  /* Добавляем плавность для фона и текста (длительность 0.3 секунды) */
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* Эффект при наведении */
+.nb:hover {
+  background-color: #3c3c3c; /* Цвета меняются местами */
+  color: #f8ce00;
+}
+.bk{
 background-color:#151515;
 color:#c3c3c3;
 width:100%;
@@ -118,18 +129,48 @@ function NewSq(U,N,S,P,C,O)
 {Sqvld[Sqi]=U;SqName[Sqi]=N;Sqssilka[Sqi]=S;Sqpodp[Sqi]=P;Sqcol[Sqi]=C;Sqops[Sqi]=O;Sqi++;}
 function NewPr(N,S,P,C)
 {PrName[Pri]=N;Prssilka[Pri]=S;Prusn[Pri]=P;Prcol[Pri]=C;Pri++;}
+function NewPrUs()
+{}
 function NewUs(N,S,P,U)
 {UsName[Usi]=N;Usssilka[Usi]=S;Usprov[Usi]=P;UsUllor[Usi]=U;Usi++;}
 
+
+function obj(v,i){var inp;
+switch(v){
+case 0:
+inp="<div style='font-size:130%;color:#ffffffc2;background-color:"+Sqcol[i]+"'>["+Sqpodp[i]+"] Подисчиков.<f style='float:right;'>Топ ("+(i+1)+")</f><div style='background-color:#0000007e'><a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a></div><br>Описание:<br><div style='color:#d0d0d0bf;background-color:#00000043;font-size:90%;'>” "+Sqops[i]+" „</div><br>Сквадовладелец: "+UsName[(Sqvld[i]-1)]+".</div><br><hr><br>";
+break;
+}return inp;}
+
+function inglv(){var st='';
+
+st+="<h2>Новости Объединения</h2>"
+
+st+="- Юсновцев уже больше 50 человек!<br><br>";
+st+="- Сумарно у всех Сквадов уже больше 2 тыщ подписчиков!<br><br>";
+st+="- Я забыл.<br><br>";
+
+st+="Новые сквады:<br><br>";
+
+st+=obj(0,2);
+st+=obj(0,3);
+st+=obj(0,13);
+st+=obj(0,14);
+st+=obj(0,16);
+st+=obj(0,30);
+st+=obj(0,31);
+st+=obj(0,33);
+
+document.getElementById("sait").innerHTML=st;}
 function inrul(){var st='';
 
 st+="<h2>Кто сейчас решает?</h2>"
 
 st+="<hr>Важные решения для Объединения, новые законы, управление, назначение админов, снятие с админки, баны и разбаны в Центральном Скваде US.Net.<br><br>";
 
-st+="Роль: "+Usprov[7]+"<br>ID - ["+(7+1)+"]<br>Посмотреть профиль: <div class='vhod'onclick='you="+7+";instr();'>"+UsName[7]+"</div><br><br>";
+st+="Роль: "+"Президент"+"<br>ID - ["+(0)+"]<br>Посмотреть профиль: <div class='vhod'onclick='you="+-1+";instr();'>"+"Выборы"+"</div><br><br>";
 
-st+="Роль: "+Usprov[17]+"<br>ID - ["+(17+1)+"]<br>Посмотреть профиль: <div class='vhod'onclick='you="+17+";instr();'>"+UsName[17]+"</div><br><br>";
+st+="Роль: "+"Вице Президент"+"<br>ID - ["+(0)+"]<br>Посмотреть профиль: <div class='vhod'onclick='you="+-1+";instr();'>"+"Выборы"+"</div><br><br>";
 
 st+="<hr>Технические проблемы, баны по приказу Президента и Вице президента в центральном скваде, разработка сайта, общая папка, и другие внештатные ситуации.<br><br>";
 
@@ -143,6 +184,13 @@ st+="<hr>Конгресс, как противовес власти Презид
 
 st+="<hr>Верховный Судья и судебная система работает отдельно и может осудить любова, включая Президента или Владыку.<br><br><hr>";
 
+st+='<h1>Так же о системе:</h1>';
+
+
+st+='<hr><a href="https://graph.org/Konstituciya-USN-07-17">Конституция USN, или типо того (нажми)</a><hr>';
+
+st+='<a href="https://t.me/InsideJobUSN/40944/50801">Как стать Юсновцем, создать сквад или партию (нажми)</a><hr>';
+
 document.getElementById("sait").innerHTML=st;}
 function inprt(){var st='';
 
@@ -154,8 +202,9 @@ for(var i=0;i<Pri;i++){
 st+="<div style='background-color:"+Prcol[i]+"'>"+(i+1)+") <a href='https://t.me/c/2370153945/"+Prssilka[i]+"'>"+PrName[i]+"</a><br>Владелец партии: "+UsName[(Prusn[i]-1)]+"</div><br>";
 }
 
-st+="<div style='background-color:#712e00'>Вы можете зарегестрировать вашу партию в Юсдуме</div><div style='background-color:#2d2d2d'><a href='https://t.me/+z_AzIQkGQJYxMzI6'>Юсдума</a></div><div style='background-color:#712e00'>так же основать коалицию партий</div><br>";
+st+="Участников партий добавлю в следующей обнове...";
 
+st+="<hr><div style='font-size:130%;color:#ffffffc2;background-color:"+Sqcol[10]+"'>ᅠ<div style='background-color:#0000007e'><a href='https://t.me/"+Sqssilka[10]+"'>"+SqName[10]+"</a></div><br>Важно:<br><div style='color:#d0d0d0bf;background-color:#00000043;font-size:90%;'>” Хотите присоедениться к партии? Создать свою или узнать о партиях? Вам в Юсдуму! Заходите, не стесняйтесь. „</div><br>ᅠ</div><br><hr><br>";
 
 document.getElementById("sait").innerHTML=st;}
 function inusn(){var st='';
@@ -179,24 +228,14 @@ st+="<h2>Сквады (сортировка по подписчикам)</h2>"
 
 st+="Всего Сквадов: "+Sqi;
 var skok=0;for(var i=0;i<Sqi;i++)skok+=Sqpodp[i];
-st+="<br><br>Всего Подписчиков: От "+Sqpodp[0]+" до "+skok+" Подписчиков.<br><br>";
+st+="<br><br>Всего Подписчиков: От "+Sqpodp[0]+" до "+skok+" Подписчиков.<br>Тобеж сумарно во всех Сквадах "+skok+" Подписчиков.<br><br>";
 
 for(var i=0;i<Sqi;i++){
-st+="<div style='background-color:"+Sqcol[i]+"'>["+Sqpodp[i]+"] Подисчиков.<f style='float:right;'>Топ ("+(i+1)+")</f><div style='background-color:#0000007e'> <a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a><br></div>Описание Сквада:<br><br>”"+Sqops[i]+" „<br><br>Сквадовладелец: "+UsName[(Sqvld[i]-1)]+"</div><br><hr><br>";
+st+="<div style='font-size:130%;color:#ffffffc2;background-color:"+Sqcol[i]+"'>["+Sqpodp[i]+"] Подисчиков.<f style='float:right;'>Топ ("+(i+1)+")</f><div style='background-color:#0000007e'><a href='https://t.me/"+Sqssilka[i]+"'>"+SqName[i]+"</a></div><br>Описание:<br><div style='color:#d0d0d0bf;background-color:#00000043;font-size:90%;'>” "+Sqops[i]+" „</div><br>Сквадовладелец: "+UsName[(Sqvld[i]-1)]+".</div><br><hr><br>";
 }
 
+st+="<hr><div style='font-size:130%;color:#ffffffc2;background-color:"+Sqcol[5]+"'>ᅠ<div style='background-color:#0000007e'><a href='https://t.me/"+Sqssilka[5]+"'>"+SqName[5]+"</a></div><br>Важно:<br><div style='color:#d0d0d0bf;background-color:#00000043;font-size:90%;'>” Хотите зарегестрировать Сквад? Заходите в Ubase! Пишите там где угодно что хотите сделать или присоеденить свой канал к USN и мы с вами договоримся! „</div><br>ᅠ</div><br><hr><br>";
 
-st+="<div style='background-color:#2d2d2d'><a href='https://t.me/InsideJobUSN'>Ubase</a></div><div style='background-color:#043a00'>Тут можно создать или зарегистрировать свой личный сквад!</div><br>";
-
-document.getElementById("sait").innerHTML=st;}
-function incst(){var st='';
-
-st+='<h1>Где прочитать о Системе?</h1>';
-
-
-st+='<hr><a href="https://graph.org/Konstituciya-USN-07-17">Конституция USN, или типо того (нажми)</a><hr>';
-
-st+='<a href="https://t.me/InsideJobUSN/40944/50801">Как стать Юсновцем, создать сквад или партию (нажми)</a><hr>';
 
 document.getElementById("sait").innerHTML=st;}
 function innas(){
@@ -243,56 +282,59 @@ if(load67==0)st+="<br><h1>Вы пока ни вступили ни в одну �
 document.getElementById("sait").innerHTML=st;}
 </script>
 <script>
-NewSq(1,"$ US.Net $","USN_pro",350,"#943a10","Самый политизированный сквад USN, тут вы сможете голосовать за важные решения в Объединении, Голосовать на выборах президента, а так же иногда выкладываються арты с Предложки.");
-NewSq(30,"𝙱𝚕 • 𝙲𝚎𝚗𝚝𝚛𝚊𝚕 𝚄𝚗𝚒𝚘𝚗","mapping_official",334,"#181596","Синяя Лига — С 11.07.2026 является полноценным сквадом ЮСН, в канале проходят конкурсы, есть исторические посты, рубрики, и вообще это самый богатый сквад ЮСН");
-NewSq(1,"Сквад Wellov's","WellovUSN",119,"#482c07","Забавный щитпостный сквад, всегда что то забавное происходит, в общем забава, легко получить админку.");
-NewSq(1,"Ubase","InsideJobUSN",101,"#165711","Ubase - место для все возможных регистраций, а так же лучшее место для вопросов о системе USN и там можно просто почитать о ней.");
-NewSq(31,"Зонтопия","zontoppp",94,"#338108","2 Сквад Зонтера, там классные анимки.");
+NewSq(1,"$ US.Net $","USN_pro",355,"#943a10","Самый политизированный сквад USN, тут вы сможете голосовать за важные решения в Объединении, Голосовать на выборах президента, а так же иногда выкладываються арты с Предложки.");
+NewSq(30,"𝙱𝚕 • 𝙲𝚎𝚗𝚝𝚛𝚊𝚕 𝚄𝚗𝚒𝚘𝚗","mapping_official",342,"#181596","Синяя Лига — С 11.07.2026 является полноценным сквадом ЮСН, в канале проходят конкурсы, есть исторические посты, рубрики, и вообще это самый богатый сквад ЮСН");
+NewSq(30,"𝙵𝚞𝚎𝚐𝚘𝚕𝚎𝚗𝚍 • 𝙲𝚄 𝙾𝚠𝚗𝚎𝚛𝚜𝚑𝚒𝚙","fuegolend",147,"#026391","Фуэголенд — Сквад созданный Горбушкой, публикуется регулярное классическое творчество кантриболз и маппинга.");
+NewSq(47,"Territory Creativity Separata (TCS)","T_C_S_3",131,"#000a35","TCS молодой сквад который всегда стремился к содружество с другими сквадами и поддержкой малоизвестных художников.");
+NewSq(1,"Сквад Wellov's","WellovUSN",121,"#482c07","Забавный щитпостный сквад, всегда что то забавное происходит, в общем забава, легко получить админку.");
+NewSq(1,"Ubase","InsideJobUSN",99,"#165711","Ubase - место для все возможных регистраций, а так же лучшее место для вопросов о системе USN и там можно просто почитать о ней.");
+NewSq(31,"Зонтопия","zontoppp",90,"#338108","2 Сквад Зонтера, там классные анимки.");
 NewSq(1,"Сквад Сотрудничества","+w2DX8NbZhe9kYWIy",90,"#453802","Главная доильня USN, а так же хороший сквад для вз пиаров.");
+NewSq(1,"АльцWella","AlcWella",86,"#070707","Сквад Владыки, немного деменции, немного программирования, немного забавы.");
+NewSq(1,"ChAU","ChatRpChAU",82,"#a37215","Сквад с мемами.");
 NewSq(1,"Юсдума","+z_AzIQkGQJYxMzI6",64,"#949494","Юсдума - место создания партий, и всё что связанно с внутренней политикой Объединения.");
-NewSq(1,"АльцWella","AlcWella",52,"#000000","Сквад Владыки, немного деменции, немного программирования, немного забавы.");
-NewSq(10,"Gavan Squad","kanalgavan",44,"#000000","Добро пожаловать в Gavan Squad. Мы- один из самых старых сквадов ЮСН, которые прошли с ним все тяжелые времена. В нашем скваде вы можете увидеть новости с нейтральной точки зрения, мое творчество и просто пообщаться в чате. Удачи =)");
-NewSq(1,"ChAU","ChatRpChAU",41,"#a37215","Сквад с мемами.");
+NewSq(10,"Gavan Squad","kanalgavan",42,"#000000","Добро пожаловать в Gavan Squad. Мы- один из самых старых сквадов ЮСН, которые прошли с ним все тяжелые времена. В нашем скваде вы можете увидеть новости с нейтральной точки зрения, мое творчество и просто пообщаться в чате. Удачи =)");
 NewSq(31,"Зонторланд","+QB7pBxtpTNw4YzFi",37,"#338108","1 Сквад Зонтера, там классные анимки.");
+NewSq(51,"Союз демократической рисовки","+g2a8h2Pd9fZkYTcy",35,"#082080","Демократическая Конференция Республик - это союз с богатой историей и странными поворотами в ней, за всё время там были и коммунисты и анархисты и куча других, но сейчас это устоявшиеся демократия");
+NewSq(9,"USN²","VolniSquad",30,"#45088e",'USN²(юсн в квадрате) - один из старейших сквадов ЮСН, в котором публикуется почти все что угодно, это вроде малого ЮСН. В основном в современности там публикуется околополитический контент и "Свободная Газета USN". В ближайшем будущем сквад будет развиваться и стремится стать лучшим сквадом.');
 NewSq(19,"НПЮСН","+3bTsv0PmfUYzZjBi",28,"#12848c","Алмазик");
-NewSq(1,"Yousquad","+RYL1JaUqvYBlNGEy",23,"#000000","Призрак прошлого... ");
-NewSq(1,"Soviet Squad","+_IWY-BM0I_YzODky",23,"#7a1b1b","Типо закрыт, жду решения Совета. Продаётся $$$");
+NewSq(30,"𝙵𝚛𝚎𝚎 𝚃𝚎𝚛𝚛𝚒𝚝𝚘𝚛𝚢 • 𝙲𝚄 𝙾𝚠𝚗𝚎𝚛𝚜𝚑𝚒𝚙","+B1ZAbbPEcLVjOTYy",25,"#6a6a6a","Личный Сквад Вити");
+NewSq(2,"🏙️O'zbek🏙️","ozbek29",24,"#195f91","Центроград — сквад ЮСН, оффициальный сквад ЦКП.<br>Данный сквад полностью принадлежит (Н)ЛДПИ и ЦКП");
+NewSq(1,"Yousquad","YouSquadd",24,"#000000","Ох уж этот Qwerty");
+NewSq(1,"Soviet Squad","+_IWY-BM0I_YzODky",22,"#7a1b1b","Типо закрыт, жду решения Совета. Продаётся $$$");
 NewSq(8,"РАО","RAOsquad",22,"#411515","РАО - Рейдерский Альянс Освобождения созданный для обычных рейдов различных каналов, теперь будет заниматься порядком в ТГКБ наподобии ТВАРи в ТГМ. Те кто хотят вступить в наши ряды, пишите в лс к @Glebinz.");
-NewSq(16,"Сквад КПЛС USN","+RSd4lPy1JBE2MjQy",19,"#141414","Официальный сквад НБАРПШ и КПЛС(к)<br>В котором:<br>Ядерные мемы,<br>Карты которые рисовали художники древних русов,<br>Арты которые рисовал сам создатель поланд болла и так далее.");
+NewSq(16,"Сквад КПЛС USN","+RSd4lPy1JBE2MjQy",18,"#141414","Официальный сквад НБАРПШ и КПЛС(к)<br>В котором:<br>Ядерные мемы,<br>Карты которые рисовали художники древних русов,<br>Арты которые рисовал сам создатель поланд болла и так далее.");
 NewSq(1,"ОККУПАЦИЯ РПЮСН","+JXIjTLU1eINhODdi",19,"#530a0a","Продаётся $$$");
-NewSq(1,"USN Mapping Squad","+ITWnxzLUYXQ1NDky",17,"#181615","Продаётся $$");
-NewSq(2,"🏙️Южный ЮСН🏙️","South_USN",16,"#195f91","Центроград — сквад ЮСН, оффициальный сквад ЦКП.<br>Данный сквад полностью принадлежит (Н)ЛДПИ и ЦКП");
-NewSq(1,"Сквад gазеtы","+B1ZAbbPEcLVjOTYy",16,"#6a6a6a","На продаже $$");
+NewSq(32,"USN Mapping Squad","+ITWnxzLUYXQ1NDky",16,"#181615","Приветсвую вас в скваду USN про маппинг В этом скваде вы научитесь рисовать маппинг А так цели псквада пока расплывчаты «дальше—больше»");
 NewSq(21,"Гусьстоцка","+3fJK2A1aA01mNzZi",15,"#680000","Слава Гусьстоцке!");
+NewSq(1,"Конгресс USN","...",13,"#300e56","Конгресс USN место принятия законов и тд...");
 NewSq(18,"ВОЛЬНБЛОК сквад","PoliticPLPsees",12,"#520707","сквад для выражения политической деятельности и идеи Вольнблока во ТГКБ в общем");
 NewSq(6,"Сан-Поландьеро","+WRxzC6Wr_ZU3YjEy",12,"#c07070","(СКВАД ЯВЛЯЕТСЯ ПОД КОНТРОЛЕМ МЕКСИКАНСКОГО КАРТЕЛЯ ПО ТОРГОВЛЕ НЕКО.) Велком ту Сан-поландьеро. Этот сквад создан в честь Поланда и Велла.");
 NewSq(1,"Orange House","...",11,"#9e6306","Место собрания для Сквадовладельцев");
-NewSq(1,"Конгресс USN","...",7,"#300e56","Конгресс USN место принятия законов и тд...");
-NewSq(1,"USN prime","",5,"#90721f","Тут у нас Элита сидит");
+NewSq(1,"USN prime","",10,"#90721f","Тут у нас Элита сидит");
+NewSq(53,"Deko United Squad","+trSY5Cm78tQyODhi",8,"#1d1d1d","Сквад Deko.");
+NewSq(2,"МСЮ","+W3wO-x24QHNlMjcy",4,"#320053","Мапперский Сквад ЮСН — приветствует вас, дорогой пользователь. У нас здесь есть чат и предложка. В предложку вы можете отправить своё произведение искусства! Мы будем очень рады, если вы отправите в предложку свою работу или подпишитесь на этот ТГК:3");
 NewSq(28,"Сквад Глеба52🎉","+gKGTRgOk9JE2M2Iy",4,"#8c0f0f","Сквад Глеба52🎉");
-NewSq(1,"U-Bank","+U2P03Swe8Y42YTcy",1,"#b48218","Центральный Банк USN");
+NewSq(1,"USballs","USN_UartS",3,"#44036d","Сквад по шарикам");
+NewSq(1,"U-Bank","+U2P03Swe8Y42YTcy",3,"#b48218","Центральный Банк USN");
 
-NewPr("НБАРПШЮСН","47914",16,"#171717");
-NewPr("ЛПП ЮСН","47914",11,"#171717");
-NewPr("НПЮСН","47995",19,"#171717");
-NewPr("СЛП ЮСН","47369",20,"#171717");
-NewPr("ПТО","47941",8,"#171717");
-NewPr("ТПЮСН","47941",10,"#171717");
-NewPr("СКП USN","48046",7,"#171717");
-NewPr("Вольнблок","48112",18,"#171717");
-NewPr("ФКГ","49250",39,"#171717");
 NewPr("Орден Либерейт","49250",9,"#171717");
+NewPr("Вольнблок","48112",18,"#171717");
+NewPr("ТПЮСН","47941",10,"#171717");
+NewPr("ЛПП ЮСН","47914",11,"#171717");
+NewPr("СЛП ЮСН","47369",20,"#171717");
+NewPr("ФКГ","49250",39,"#171717");
 
-NewUs("Mr Well","Overlord_of_USN","Владыка",10);
-NewUs("Южнобалканская Независимая Республика","sbir_tg","Сквадовладелец",10);
-NewUs("Daiwakasu (Даивакаши)","Daiwakasu_chan","Политик",10);
-NewUs("AnimEnder (Эндер)","Ender_789101","Владыка",10);
-NewUs("Сырный","Rawenta","Мяу",10);
-NewUs("🇵🇱 Poland 🇵🇱","Polskacool","Сквадовладелец",10);
+NewUs("Mr Well","Overlord_of_USN","Владыка,Элита,Сквадовладелец",10);
+NewUs("O'zbek","ozbekkk1","Сквадовладелец",10);
+NewUs("Daiwakasu (Даивакаши)","Daiwakasu_chan","Элита",10);
+NewUs("AnimEnder (Эндер)","Ender_789101","Владыка,Элита",10);
+NewUs("Сырный","Rawenta","Элита",10);
+NewUs("𝑆𝑤𝑒𝑑𝑒𝑛","Swedenrussian","Сквадовладелец",10);
 NewUs("Артём Ересько","Shaynehgddg","Политик",10);
-NewUs("чумной доктор","Glebinz","Президент",10);
-NewUs("Грасси","realgrassy","Политик",10);
-NewUs("Стародубчик","Starodubchik","Легенда",10);
+NewUs("чумной доктор","Glebinz","Сквадовладелец,Элита",10);
+NewUs("Грасси","realgrassy","Сквадовладелец,Элита",10);
+NewUs("Стародубчик","Starodubchik","Сквадовладелец,Элита",10);
 NewUs("[TGBO] Недосидевший многократно недокандидат в недокуда","DivanPizda","",10);
 NewUs(".","GlebinzLOX","",0);
 NewUs("канонир","Gunner201","",0);
@@ -300,7 +342,7 @@ NewUs("Фин","Finland_638","",0);
 NewUs("Nik Balls","Nik_Balls","",0);
 NewUs("Александр Сергеевич Чистяков","Sankasoil","",0);
 NewUs("Артфул","NoneCountry_Official","",0);
-NewUs("вольнич","Wolnich_37","Вице Президент",0);
+NewUs("вольнич","Wolnich_37","Сквадовладелец,Элита",0);
 NewUs("Шандргаллатрин","davidchelik","",0);
 NewUs("Пи🚪","GSSFRchik","",0);
 NewUs("император гусей","gsee565688","",0);
@@ -313,8 +355,8 @@ NewUs("министр","Ministerstvo_bespredeela","",0);
 NewUs("Глеб52","USSRleave","",0);
 NewUs("Карл Двенадцатый шведский","Sir10o","",0);
 NewUs("Петроградский","vitaly_2048","Сквадовладелец",69);
-NewUs("Зонтер","Verdanlord","",0);
-NewUs("UwU","eeeUwUeee","",0);
+NewUs("Зонтер","Verdanlord","Сквадовладелец",0);
+NewUs("UwU","eeeUwUeee","Элита",0);
 NewUs("ComeBack","IMComeBack0p","",0);
 NewUs("Диванный политик","Divan_politic","",0);
 NewUs("Гаанар","gnr57","",0);
@@ -327,5 +369,13 @@ NewUs("Гудериан","Guderian_01","",0);
 NewUs("Марк","KUWERTU1","",0);
 NewUs("Эм Марков","wufoqa","",0);
 NewUs("𝐅𝐫𝐢𝐝𝐫𝐢𝐡 𝐈𝐈 𝐢𝐧 𝐍𝐨𝐫𝐝𝐦𝐚𝐫𝐤 (🇸🇪🇩🇰🇫🇮🇩🇪)","Nordmark_ball","",0);
-
+NewUs("Teigtasche","Vitay354","Новичок",0);
+NewUs("@","Ghtewsj","Новичок",0);
+NewUs("IS_SEPARAT","IS_SEPARAT","Сквадовладелец",0);
+NewUs("Brutal_plita","Contryballs12","Олд",0);
+NewUs("Стас/ВЕРНИТЕ ДУРЬ","skelERIK","Олд",0);
+NewUs("Мега Безмозглый Неотразимый Анальный Гений и Магистр Гейства / Бог","spyashchiy_taburet","Крутой Юсновец в Очках",0);
+NewUs("Артём Читовский","artruss1","Сквадовладелец",0);
+NewUs("Творец","MaksVostov","Новичок",0);
+NewUs("ComeBack","@IMComeBack0p","Олд",0);
 insqd();</script>
